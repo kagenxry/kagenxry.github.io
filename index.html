@@ -10,212 +10,188 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    height:100vh;
-    overflow:hidden;
-    color:#fff;
-    position:relative;
-    background:linear-gradient(-45deg, #140021, #2a0047, #3d0066, #1a0033);
-    background-size:400% 400%;
-    animation:gradientBG 6s ease infinite;
+font-family:'Poppins',sans-serif;
+min-height:100vh;
+color:#fff;
+background:linear-gradient(-45deg,#140021,#2a0047,#3d0066,#1a0033);
+background-size:400% 400%;
+animation:gradientBG 6s ease infinite;
+position:relative;
 }
 
-/* خلفية متحركة */
 @keyframes gradientBG{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-/* ===== Falling Leaves ===== */
-
+/* Leaves */
 .leaf{
-    position:absolute;
-    top:-50px;
-    width:18px;
-    height:18px;
-    background:linear-gradient(45deg,#c77dff,#ff8bd1);
-    border-radius:50% 0 50% 50%;
-    opacity:.8;
-    animation:fall linear infinite;
+position:absolute;
+top:-50px;
+width:15px;
+height:15px;
+background:linear-gradient(45deg,#c77dff,#ff8bd1);
+border-radius:50% 0 50% 50%;
+opacity:.7;
+animation:fall linear infinite;
 }
 
 @keyframes fall{
-    0%{transform:translateY(-50px) rotate(0deg);opacity:0;}
-    10%{opacity:.9;}
-    100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
+0%{transform:translateY(-50px) rotate(0deg);opacity:0;}
+10%{opacity:.9;}
+100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
 }
 
 .leaf:nth-child(1){left:5%;animation-duration:8s;}
-.leaf:nth-child(2){left:15%;animation-duration:10s;animation-delay:2s;}
-.leaf:nth-child(3){left:30%;animation-duration:7s;animation-delay:4s;}
-.leaf:nth-child(4){left:45%;animation-duration:9s;animation-delay:1s;}
-.leaf:nth-child(5){left:60%;animation-duration:11s;animation-delay:3s;}
-.leaf:nth-child(6){left:75%;animation-duration:8s;animation-delay:5s;}
-.leaf:nth-child(7){left:90%;animation-duration:10s;animation-delay:2s;}
+.leaf:nth-child(2){left:20%;animation-duration:10s;}
+.leaf:nth-child(3){left:35%;animation-duration:7s;}
+.leaf:nth-child(4){left:50%;animation-duration:9s;}
+.leaf:nth-child(5){left:65%;animation-duration:11s;}
+.leaf:nth-child(6){left:80%;animation-duration:8s;}
+.leaf:nth-child(7){left:95%;animation-duration:10s;}
 
-/* ===== Top Left ===== */
-
-.top-left{
-    position:absolute;
-    top:30px;
-    left:40px;
+/* Layout */
+.container{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+padding:40px;
+flex-wrap:wrap;
 }
 
-.top-left h1{
-    font-size:38px;
+.left{
+max-width:500px;
 }
 
-.top-left h2{
-    margin-top:5px;
-    font-size:18px;
-    font-weight:400;
-    color:#d1c4e9;
+.left h1{
+font-size:38px;
 }
 
-.top-left .hook{
-    margin-top:12px;
-    font-size:15px;
-    color:#c77dff;
+.left h2{
+margin-top:5px;
+font-size:18px;
+font-weight:400;
+color:#d1c4e9;
 }
 
-/* Social */
+.hook{
+margin-top:12px;
+font-size:15px;
+color:#c77dff;
+}
 
 .social{
-    margin-top:18px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
 .social a{
-    text-decoration:none;
-    color:#fff;
-    font-size:14px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    transition:.3s;
-}
-
-.social a i{
-    font-size:18px;
+text-decoration:none;
+color:#fff;
+display:flex;
+align-items:center;
+gap:10px;
+transition:.3s;
 }
 
 .social a:hover{
-    color:#c77dff;
-    transform:translateX(5px);
+color:#c77dff;
+transform:translateX(5px);
 }
 
-/* ===== Top Right ===== */
-
-.top-right{
-    position:absolute;
-    top:30px;
-    right:40px;
-    display:flex;
-    align-items:center;
-    gap:40px;
+.right{
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+gap:25px;
 }
 
 .stats{
-    display:flex;
-    gap:25px;
+display:flex;
+gap:25px;
 }
 
 .stat{
-    text-align:center;
+text-align:center;
 }
 
 .stat h3{
-    font-size:20px;
-    color:#c77dff;
-}
-
-.stat p{
-    font-size:11px;
-    color:#ddd;
+color:#c77dff;
 }
 
 .buttons{
-    display:flex;
-    gap:15px;
+display:flex;
+gap:15px;
 }
 
 .btn{
-    padding:10px 22px;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-    font-size:14px;
+padding:10px 22px;
+border-radius:25px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+font-size:14px;
 }
 
 .primary{
-    background:#6a00ff;
-    color:#fff;
-}
-
-.primary:hover{
-    background:#b266ff;
-    transform:translateY(-3px);
+background:#6a00ff;
+color:#fff;
 }
 
 .secondary{
-    border:2px solid #6a00ff;
-    color:#fff;
+border:2px solid #6a00ff;
+color:#fff;
 }
 
-.secondary:hover{
-    background:#6a00ff;
-    transform:translateY(-3px);
+.btn:hover{
+transform:translateY(-3px);
+background:#b266ff;
 }
 
-/* ===== Character ===== */
+/* ========================= */
+/* 📱 Responsive */
+/* ========================= */
 
-.center-character{
-    position:absolute;
-    bottom:-400px;
-    left:50%;
-    transform:translateX(-50%);
-    width:380px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    pointer-events:none;
-    animation:characterEntrance 1.8s ease-out forwards;
+@media (max-width:768px){
+
+.container{
+flex-direction:column;
+align-items:center;
+text-align:center;
 }
 
-.center-character img{
-    width:400%;
-    max-height:auto;
-    object-fit:contain;
-    animation:idleFloat 4s ease-in-out infinite 1.8s;
-    filter:drop-shadow(0 0 25px #8a2be2);
+.left h1{
+font-size:28px;
 }
 
-@keyframes characterEntrance{
-    0%{bottom:-400px;opacity:0;}
-    100%{bottom:0px;opacity:1;}
+.right{
+align-items:center;
 }
 
-@keyframes idleFloat{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-20px);}
-    100%{transform:translateY(0);}
+.stats{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.buttons{
+flex-wrap:wrap;
+justify-content:center;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Leaves -->
 <div class="leaf"></div>
 <div class="leaf"></div>
 <div class="leaf"></div>
@@ -224,47 +200,47 @@ body{
 <div class="leaf"></div>
 <div class="leaf"></div>
 
-<!-- Top Left -->
-<div class="top-left">
-    <h1>Kagen Xry</h1>
-    <h2>Gaming & Esports Designer</h2>
-    <div class="hook">
-        Turning Ideas Into Competitive Visual Power
-    </div>
+<div class="container">
 
-    <div class="social">
-        <a href="https://wa.me/201015885358" target="_blank">
-            <i class="fab fa-whatsapp"></i> +201015885358
-        </a>
+<div class="left">
+<h1>Kagen Xry</h1>
+<h2>Gaming & Esports Designer</h2>
+<div class="hook">Turning Ideas Into Competitive Visual Power</div>
 
-        <a href="https://instagram.com/kagenxry" target="_blank">
-            <i class="fab fa-instagram"></i> @kagenxry
-        </a>
-    </div>
+<div class="social">
+<a href="https://wa.me/201015885358" target="_blank">
+<i class="fab fa-whatsapp"></i> +201015885358
+</a>
+
+<a href="https://instagram.com/kagenxry" target="_blank">
+<i class="fab fa-instagram"></i> @kagenxry
+</a>
+</div>
 </div>
 
-<!-- Top Right -->
-<div class="top-right">
+<div class="right">
 
-    <div class="stats">
-        <div class="stat">
-            <h3>150+</h3>
-            <p>Projects</p>
-        </div>
-        <div class="stat">
-            <h3>4+</h3>
-            <p>Years</p>
-        </div>
-        <div class="stat">
-            <h3>100%</h3>
-            <p>Clients</p>
-        </div>
-    </div>
+<div class="stats">
+<div class="stat">
+<h3>150+</h3>
+<p>Projects</p>
+</div>
 
-    <div class="buttons">
-        <a href="designs.html" class="btn primary">For Designs</a>
-        <a href="#" class="btn secondary">Rate Me</a>
-    </div>
+<div class="stat">
+<h3>4+</h3>
+<p>Years</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Clients</p>
+</div>
+</div>
+
+<div class="buttons">
+<a href="designs.html" class="btn primary">For Designs</a>
+<a href="#" class="btn secondary">Rate Me</a>
+</div>
 
 </div>
 
