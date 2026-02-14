@@ -6,6 +6,7 @@
 <title>Kagen Xry</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{
@@ -37,18 +38,12 @@ body{
 }
 
 @keyframes fall{
-    0%{
-        transform:translateY(-50px) rotate(0deg);
-        opacity:0;
-    }
+    0%{transform:translateY(-50px) rotate(0deg);opacity:0;}
     10%{opacity:.9;}
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-    }
+    100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
 }
 
-.leaf:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
+.leaf:nth-child(1){left:5%;animation-duration:8s;}
 .leaf:nth-child(2){left:15%;animation-duration:10s;animation-delay:2s;}
 .leaf:nth-child(3){left:30%;animation-duration:7s;animation-delay:4s;}
 .leaf:nth-child(4){left:45%;animation-duration:9s;animation-delay:1s;}
@@ -56,7 +51,7 @@ body{
 .leaf:nth-child(6){left:75%;animation-duration:8s;animation-delay:5s;}
 .leaf:nth-child(7){left:90%;animation-duration:10s;animation-delay:2s;}
 
-/* ===== Top Left Text ===== */
+/* ===== Top Left ===== */
 
 .top-left{
     position:absolute;
@@ -81,7 +76,35 @@ body{
     color:#c77dff;
 }
 
-/* ===== Top Right Area ===== */
+/* Social Links */
+
+.social{
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.social a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+}
+
+.social a i{
+    font-size:18px;
+}
+
+.social a:hover{
+    color:#c77dff;
+    transform:translateX(5px);
+}
+
+/* ===== Top Right ===== */
 
 .top-right{
     position:absolute;
@@ -145,32 +168,37 @@ body{
     transform:translateY(-3px);
 }
 
-/* ===== Center Character Placeholder ===== */
+/* ===== Character ===== */
 
 .center-character{
     position:absolute;
-    top:50%;
+    bottom:-400px;
     left:50%;
-    transform:translate(-50%,-50%);
-    width:350px;
+    transform:translateX(-50%);
+    width:380px;
     display:flex;
     justify-content:center;
     align-items:center;
     pointer-events:none;
+    animation:characterEntrance 1.8s ease-out forwards;
 }
 
-/* الصورة اللي هتحطها */
 .center-character img{
     width:100%;
-    max-height:500px;
+    max-height:520px;
     object-fit:contain;
-    animation:float 4s ease-in-out infinite;
+    animation:idleFloat 4s ease-in-out infinite 1.8s;
+    filter:drop-shadow(0 0 25px #8a2be2);
 }
 
-/* حركة خفيفة */
-@keyframes float{
+@keyframes characterEntrance{
+    0%{bottom:-400px;opacity:0;}
+    100%{bottom:0px;opacity:1;}
+}
+
+@keyframes idleFloat{
     0%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
+    50%{transform:translateY(-20px);}
     100%{transform:translateY(0);}
 }
 </style>
@@ -178,7 +206,7 @@ body{
 
 <body>
 
-<!-- Sakura Leaves -->
+<!-- Leaves -->
 <div class="leaf"></div>
 <div class="leaf"></div>
 <div class="leaf"></div>
@@ -194,6 +222,18 @@ body{
     <div class="hook">
         Turning Ideas Into Competitive Visual Power
     </div>
+
+    <div class="social">
+        <!-- غير الرقم هنا -->
+        <a href="https://wa.me/201234567890" target="_blank">
+            <i class="fab fa-whatsapp"></i> +20 123 456 7890
+        </a>
+
+        <!-- غير اليوزر هنا -->
+        <a href="https://instagram.com/yourusername" target="_blank">
+            <i class="fab fa-instagram"></i> @yourusername
+        </a>
+    </div>
 </div>
 
 <!-- Top Right -->
@@ -202,7 +242,7 @@ body{
     <div class="stats">
         <div class="stat">
             <h3>150+</h3>
-            <p>Projects Completed</p>
+            <p>Projects</p>
         </div>
         <div class="stat">
             <h3>4+</h3>
@@ -210,7 +250,7 @@ body{
         </div>
         <div class="stat">
             <h3>100%</h3>
-            <p>Client</p>
+            <p>Clients</p>
         </div>
     </div>
 
@@ -221,9 +261,9 @@ body{
 
 </div>
 
-<!-- مكان تحط فيه شخصيتك -->
+<!-- Character -->
 <div class="center-character">
-    <!-- حط هنا اسم صورة شخصيتك -->
+    <!-- غير اسم الصورة هنا -->
     <img src="your-character.png" alt="">
 </div>
 
