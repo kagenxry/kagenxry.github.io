@@ -3,151 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cinema UI</title>
+<title>Kagen Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#0f0f0f;
-    color:#fff;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
 }
 
-/* Hero Background */
-.hero{
-    height:100vh;
-    background:linear-gradient(90deg,#0f0f0f 30%, rgba(15,15,15,0.6)),
-               radial-gradient(circle at right, #1f2937, #0f0f0f 60%);
-    background-blend-mode:overlay;
+/* Animated Glow Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle, rgba(255,140,0,0.6), transparent 60%);
+    top:20%;
+    right:10%;
+    animation:moveGlow 8s infinite alternate ease-in-out;
+    filter:blur(120px);
+}
+
+@keyframes moveGlow{
+    0%{transform:translate(0,0);}
+    100%{transform:translate(-100px,80px);}
+}
+
+/* Glass Card */
+.card{
+    position:relative;
+    width:90%;
+    max-width:1100px;
+    padding:60px;
+    background:rgba(20,20,20,0.6);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    animation:fadeIn 1.5s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+
+/* Left */
+.left{
+    max-width:550px;
+}
+
+.status{
+    color:#00ff88;
+    margin-bottom:15px;
+    opacity:0;
+    animation:slideUp 1s ease forwards;
+    animation-delay:.5s;
+}
+
+.role{
+    color:#ffb300;
+    margin-bottom:10px;
+    opacity:0;
+    animation:slideUp 1s ease forwards;
+    animation-delay:.8s;
+}
+
+.name{
+    font-size:70px;
+    font-weight:800;
+    margin-bottom:25px;
+    opacity:0;
+    animation:slideUp 1s ease forwards;
+    animation-delay:1.1s;
+}
+
+.contact{
     display:flex;
     flex-direction:column;
-}
-
-/* Navbar */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-}
-
-nav .logo{
-    font-size:24px;
-    font-weight:700;
-    letter-spacing:2px;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#ccc;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#fff;
-}
-
-nav .right{
-    display:flex;
-    gap:20px;
-    align-items:center;
-}
-
-.sign-btn{
-    padding:8px 18px;
-    border:1px solid #fff;
-    background:transparent;
-    color:#fff;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.sign-btn:hover{
-    background:#fff;
-    color:#000;
-}
-
-/* Content */
-.content{
-    flex:1;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
-}
-
-.text{
-    max-width:500px;
-}
-
-.text h1{
-    font-size:60px;
-    font-weight:700;
-    line-height:1.1;
-}
-
-.text p{
-    margin:20px 0;
-    color:#bbb;
-    line-height:1.6;
-}
-
-.watch-btn{
-    display:inline-flex;
-    align-items:center;
     gap:10px;
-    color:#00e0ff;
-    text-decoration:none;
+    color:#ccc;
+    opacity:0;
+    animation:slideUp 1s ease forwards;
+    animation-delay:1.4s;
+}
+
+.contact span{
+    color:#ffb300;
+}
+
+/* Button */
+.cv-btn{
+    position:absolute;
+    top:40px;
+    right:60px;
+    padding:10px 25px;
+    background:#ffb300;
+    border:none;
+    border-radius:30px;
     font-weight:600;
-    transition:.3s;
-}
-
-.watch-btn:hover{
-    transform:translateX(5px);
-}
-
-/* Bottom Slider Style */
-.bottom{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 8%;
-    align-items:center;
-    color:#aaa;
-    font-size:14px;
-    border-top:1px solid rgba(255,255,255,0.1);
-}
-
-.circle{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:#222;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     cursor:pointer;
     transition:.3s;
 }
 
-.circle:hover{
-    background:#444;
+.cv-btn:hover{
+    background:#ffa000;
+    transform:scale(1.1);
 }
 
+/* Animations */
+@keyframes slideUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* Mouse Move Effect */
+.card:hover{
+    transform:scale(1.02);
+    transition:.4s ease;
+}
+
+/* Responsive */
 @media(max-width:900px){
-    .text h1{
-        font-size:40px;
+    .name{
+        font-size:45px;
     }
 }
 </style>
@@ -155,44 +155,23 @@ nav .right{
 
 <body>
 
-<section class="hero">
+<div class="card">
 
-    <nav>
-        <div class="logo">MYFLIX</div>
+<button class="cv-btn">Download CV</button>
 
-        <ul>
-            <li><a href="#">Series</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Kids</a></li>
-        </ul>
+<div class="left">
+    <div class="status">● Available for work</div>
+    <div class="role">Full Stack Developer</div>
+    <div class="name">Kagen Xry</div>
 
-        <div class="right">
-            <span>Search</span>
-            <button class="sign-btn">Sign In</button>
-        </div>
-    </nav>
-
-    <div class="content">
-        <div class="text">
-            <h1>Epic Fantasy Show</h1>
-            <p>
-                Winter is here, and so is the great battle.
-                Stream the latest episodes now in stunning quality.
-            </p>
-            <a href="#" class="watch-btn">▶ Watch Trailer</a>
-        </div>
+    <div class="contact">
+        <div>📞 <span>+201015885358</span></div>
+        <div>📷 Instagram: <span>@kagenxry</span></div>
+        <div>✈ Telegram: <span>@kagenxry</span></div>
     </div>
+</div>
 
-    <div class="bottom">
-        <div>Previous Show</div>
-        <div style="display:flex; gap:15px;">
-            <div class="circle">◀</div>
-            <div class="circle">▶</div>
-        </div>
-        <div>Next Show</div>
-    </div>
-
-</section>
+</div>
 
 </body>
 </html>
