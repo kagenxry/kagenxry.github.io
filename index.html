@@ -56,6 +56,31 @@ body{
 .leaf:nth-child(6){left:75%;animation-duration:8s;animation-delay:5s;}
 .leaf:nth-child(7){left:90%;animation-duration:10s;animation-delay:2s;}
 
+/* ===== Top Left Text ===== */
+
+.top-left{
+    position:absolute;
+    top:30px;
+    left:40px;
+}
+
+.top-left h1{
+    font-size:38px;
+}
+
+.top-left h2{
+    margin-top:5px;
+    font-size:18px;
+    font-weight:400;
+    color:#d1c4e9;
+}
+
+.top-left .hook{
+    margin-top:12px;
+    font-size:15px;
+    color:#c77dff;
+}
+
 /* ===== Top Right Area ===== */
 
 .top-right{
@@ -66,8 +91,6 @@ body{
     align-items:center;
     gap:40px;
 }
-
-/* Stats */
 
 .stats{
     display:flex;
@@ -87,8 +110,6 @@ body{
     font-size:11px;
     color:#aaa;
 }
-
-/* Buttons */
 
 .buttons{
     display:flex;
@@ -124,30 +145,33 @@ body{
     transform:translateY(-3px);
 }
 
-/* ===== Center Content ===== */
+/* ===== Center Character Placeholder ===== */
 
-.center{
+.center-character{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    text-align:center;
+    width:350px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
 }
 
-.center h1{
-    font-size:60px;
+/* الصورة اللي هتحطها */
+.center-character img{
+    width:100%;
+    max-height:500px;
+    object-fit:contain;
+    animation:float 4s ease-in-out infinite;
 }
 
-.center h2{
-    margin-top:10px;
-    font-weight:400;
-    color:#d1c4e9;
-}
-
-.hook{
-    margin-top:20px;
-    font-size:18px;
-    color:#c77dff;
+/* حركة خفيفة */
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
 }
 </style>
 </head>
@@ -162,6 +186,15 @@ body{
 <div class="leaf"></div>
 <div class="leaf"></div>
 <div class="leaf"></div>
+
+<!-- Top Left -->
+<div class="top-left">
+    <h1>Kagen Xry</h1>
+    <h2>Gaming & Esports Designer</h2>
+    <div class="hook">
+        Turning Ideas Into Competitive Visual Power
+    </div>
+</div>
 
 <!-- Top Right -->
 <div class="top-right">
@@ -188,13 +221,10 @@ body{
 
 </div>
 
-<!-- Center Name -->
-<div class="center">
-    <h1>Kagen Xry</h1>
-    <h2>Gaming & Esports Designer</h2>
-    <div class="hook">
-        Turning Ideas Into Competitive Visual Power
-    </div>
+<!-- مكان تحط فيه شخصيتك -->
+<div class="center-character">
+    <!-- حط هنا اسم صورة شخصيتك -->
+    <img src="your-character.png" alt="">
 </div>
 
 </body>
