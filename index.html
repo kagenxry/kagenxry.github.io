@@ -53,26 +53,14 @@ opacity:.8;
 z-index:-2;
 }
 
-/* ===== Top Section ===== */
+/* ===== Top Right Buttons ===== */
 
-.top-left h1{
-font-size:42px;
-color:#60a5fa;
-font-weight:700;
-}
-
-.top-left p{
-margin-top:12px;
-color:#cbd5e1;
-max-width:500px;
-}
-
-.row{
+.top-buttons{
+position:absolute;
+top:60px;
+right:60px;
 display:flex;
-align-items:center;
-gap:20px;
-margin-top:25px;
-flex-wrap:wrap;
+gap:15px;
 }
 
 .btn{
@@ -93,10 +81,30 @@ border:1px solid #3b82f6;
 color:#fff;
 }
 
+/* ===== Top Left Info ===== */
+
+.top-left h1{
+font-size:42px;
+color:#60a5fa;
+font-weight:700;
+}
+
+.top-left .role{
+margin-top:5px;
+color:#3b82f6;
+font-weight:600;
+}
+
+.top-left p{
+margin-top:10px;
+color:#cbd5e1;
+max-width:500px;
+}
+
 .stats{
 display:flex;
 gap:20px;
-margin-left:15px;
+margin-top:20px;
 }
 
 .stat{
@@ -107,7 +115,7 @@ color:#60a5fa;
 /* ===== Contact ===== */
 
 .contact{
-margin-top:20px;
+margin-top:15px;
 display:flex;
 gap:20px;
 flex-wrap:wrap;
@@ -154,14 +162,15 @@ flex-wrap:wrap;
 }
 
 .card{
-width:270px;
-min-height:320px;
+width:280px;
+min-height:350px;
 background:rgba(255,255,255,0.05);
 border-radius:20px;
 border:1px solid rgba(255,255,255,0.1);
 padding:30px;
 backdrop-filter:blur(20px);
 position:relative;
+text-align:left;
 }
 
 /* Glow under cards */
@@ -200,27 +209,40 @@ font-size:14px;
 font-size:26px;
 font-weight:700;
 color:#60a5fa;
-margin-top:10px;
+margin-bottom:15px;
+}
+
+.order-btn{
+display:inline-block;
+padding:10px 20px;
+background:linear-gradient(90deg,#2563eb,#3b82f6);
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- Top Right Buttons -->
+<div class="top-buttons">
+<a href="designs.html" class="btn primary">For Designs</a>
+<a href="#" class="btn secondary">Rate Me</a>
+</div>
+
+<!-- Top Left Info -->
 <div class="top-left">
 
 <h1>Kagenxry</h1>
+<div class="role">Gaming & Esports Designer</div>
 <p>A talented designer who transforms designs into competitive visual content</p>
-
-<div class="row">
-<a href="designs.html" class="btn primary">For Designs</a>
-<a href="#" class="btn secondary">Rate Me</a>
 
 <div class="stats">
 <div class="stat">150+</div>
 <div class="stat">4+</div>
 <div class="stat">100%</div>
-</div>
 </div>
 
 <div class="contact">
@@ -253,6 +275,7 @@ margin-top:10px;
 <li>Available and Unavailable</li>
 </ul>
 <div class="price">10$</div>
+<a href="https://wa.me/201015885358" target="_blank" class="order-btn">Order Now</a>
 </div>
 
 <div class="card">
@@ -263,10 +286,7 @@ margin-top:10px;
 <li>Stickers</li>
 </ul>
 <div class="price">3$</div>
-</div>
-
-<div class="card">
-<h3>Package 3</h3>
+<a href="https://wa.me/201015885358" target="_blank" class="order-btn">Order Now</a>
 </div>
 
 </div>
