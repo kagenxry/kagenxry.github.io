@@ -1,112 +1,4 @@
-[12:25 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagenxry</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#050816;
-color:#fff;
-min-height:100vh;
-padding:60px;
-position:relative;
-overflow-x:hidden;
-}
-
-/* ===== Premium Blue Glow Background ===== */
-
-body::before{
-content:"";
-position:fixed;
-width:1000px;
-height:1000px;
-background:radial-gradient(circle,#2563eb 0%,transparent 70%);
-top:-300…
-[12:29 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagenxry</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#050816;
-color:#fff;
-min-height:100vh;
-padding:60px;
-position:relative;
-overflow-x:hidden;
-}
-
-/* ===== Premium Blue Glow Background ===== */
-
-body::before{
-content:"";
-position:fixed;
-width:1000px;
-height:1000px;
-background:radial-gradient(circle,#2563eb 0%,transparent 70%);
-top:-300…
-[12:34 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagenxry</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#050816;
-color:#fff;
-min-height:100vh;
-padding:60px;
-position:relative;
-overflow-x:hidden;
-}
-
-/* ===== Premium Blue Glow Background ===== */
-
-body::before{
-content:"";
-position:fixed;
-width:1000px;
-height:1000px;
-background:radial-gradient(circle,#2563eb 0%,transparent 70%);
-top:-300…
-[12:37 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -133,44 +25,7 @@ position:relative;
 overflow-x:hidden;
 }
 
-/* ===== Softer Blue Glow ===== */
-
-body::before{
-content:"";
-position:fixed;
-width:900px;
-height:900px;
-background:radial-gradient(circle,#2563eb 0%,transparent 70%);
-top:-300px;
-left:-300p…
-[12:41 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagenxry</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#070b18;
-color:#fff;
-min-height:100vh;
-padding:60px;
-position:relative;
-overflow-x:hidden;
-}
-
-/* ===== Softer Background Glow ===== */
+/* ===== Animated Background Glow ===== */
 
 body::before{
 content:"";
@@ -183,6 +38,7 @@ left:-300px;
 filter:blur(180px);
 opacity:.45;
 z-index:-3;
+animation:moveGlow1 18s ease-in-out infinite alternate;
 }
 
 body::after{
@@ -196,9 +52,20 @@ right:-300px;
 filter:blur(180px);
 opacity:.35;
 z-index:-3;
+animation:moveGlow2 22s ease-in-out infinite alternate;
 }
 
-/* ===== Noise / Grain Overlay ===== */
+@keyframes moveGlow1{
+0%{ transform:translate(0,0); }
+100%{ transform:translate(120px,80px); }
+}
+
+@keyframes moveGlow2{
+0%{ transform:translate(0,0); }
+100%{ transform:translate(-100px,-70px); }
+}
+
+/* ===== Noise ===== */
 
 .noise{
 position:fixed;
@@ -246,7 +113,7 @@ transform:translateY(-4px);
 box-shadow:0 10px 25px rgba(37,99,235,.4);
 }
 
-/* ===== Top Left Info ===== */
+/* ===== Top Left ===== */
 
 .top-left h1{
 font-size:42px;
@@ -311,7 +178,7 @@ transform:translateY(-3px);
 color:#3b82f6;
 }
 
-/* ===== Pricing Section ===== */
+/* ===== Pricing ===== */
 
 .pricing{
 margin-top:120px;
@@ -345,43 +212,6 @@ padding:30px;
 backdrop-filter:blur(15px);
 position:relative;
 text-align:left;
-transition:all .35s ease;
-overflow:hidden;
-}
-
-/* ===== Blue Flare Effect ===== */
-
-.card::before{
-content:"";
-position:absolute;
-top:-60px;
-right:-60px;
-width:180px;
-height:180px;
-background:radial-gradient(circle, rgba(96,165,250,.35) 0%, transparent 70%);
-filter:blur(40px);
-opacity:.4;
-transition:all .4s ease;
-pointer-events:none;
-}
-
-.card:hover::before{
-opacity:.8;
-transform:scale(1.15);
-}
-
-.card::after{
-content:"";
-position:absolute;
-left:50%;
-bottom:-50px;
-transform:translateX(-50%);
-width:70%;
-height:100px;
-background:radial-gradient(circle,#2563eb 0%,transparent 70%);
-filter:blur(70px);
-opacity:.4;
-z-index:-1;
 transition:all .35s ease;
 }
 
@@ -436,13 +266,11 @@ box-shadow:0 10px 20px rgba(37,99,235,.4);
 
 <div class="noise"></div>
 
-<!-- Top Right Buttons -->
 <div class="top-buttons">
 <a href="designs.html" class="btn primary">For Designs</a>
 <a href="#" class="btn secondary">Rate Me</a>
 </div>
 
-<!-- Top Left Info -->
 <div class="top-left">
 
 <h1>Kagenxry</h1>
@@ -466,8 +294,6 @@ box-shadow:0 10px 20px rgba(37,99,235,.4);
 </div>
 
 </div>
-
-<!-- Pricing Section -->
 
 <div class="pricing">
 <h2>Choose Your Perfect Plan</h2>
