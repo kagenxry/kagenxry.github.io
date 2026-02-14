@@ -23,45 +23,57 @@ body{
     justify-content:center;
     align-items:center;
     position:relative;
+    color:#fff;
+
+    /* ===== GRADIENT BACKGROUND ===== */
+    background: linear-gradient(-45deg, 
+        #0f0f0f, 
+        #1a1a1a, 
+        #141414, 
+        #000000
+    );
+    background-size:400% 400%;
+    animation: gradientMove 12s ease infinite;
 }
 
-/* ===== BACKGROUND IMAGE WITH BLUR ===== */
+/* ===== SOFT GLOW LAYERS ===== */
 
 body::before{
     content:"";
     position:absolute;
-    inset:0;
-    background:url("bg.jpg") center/cover no-repeat;
-    filter: blur(8px);
-    transform: scale(1.1);
-    z-index:-2;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle, rgba(255,179,0,0.15), transparent 70%);
+    top:-150px;
+    left:-150px;
+    filter:blur(80px);
+    animation: glowMove 8s ease-in-out infinite alternate;
 }
-
-/* ===== DARK OVERLAY FOR READABILITY ===== */
 
 body::after{
     content:"";
     position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.45);
-    z-index:-1;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(255,179,0,0.12), transparent 70%);
+    bottom:-150px;
+    right:-150px;
+    filter:blur(80px);
 }
 
-/* ===== CONTENT WRAPPER ===== */
+/* ===== WRAPPER ===== */
 
 .wrapper{
-    text-align:left;
     width:90%;
     max-width:1200px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    color:#fff;
     animation:fadeUp 1s ease forwards;
     opacity:0;
 }
 
-/* ===== TEXT AREA ===== */
+/* ===== TEXT ===== */
 
 .content{
     width:55%;
@@ -70,13 +82,13 @@ body::after{
 h1{
     font-size:60px;
     color:#ffffff;
-    text-shadow:0 0 25px rgba(255,255,255,0.3);
+    text-shadow:0 0 25px rgba(255,255,255,0.2);
 }
 
 h2{
     margin-top:15px;
     font-weight:400;
-    color:#e0e0e0;
+    color:#cccccc;
 }
 
 /* ===== BUTTON ===== */
@@ -85,7 +97,7 @@ h2{
     display:inline-block;
     margin-top:30px;
     padding:12px 28px;
-    background:#ffffff;
+    background:#ffb300;
     color:#000;
     font-weight:600;
     border-radius:30px;
@@ -94,8 +106,7 @@ h2{
 }
 
 .design-btn:hover{
-    background:#ffb300;
-    color:#000;
+    background:#fff;
     transform:translateY(-3px);
 }
 
@@ -143,6 +154,17 @@ h2{
 }
 
 /* ===== ANIMATIONS ===== */
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes glowMove{
+    from{transform:translateY(0px);}
+    to{transform:translateY(40px);}
+}
 
 @keyframes fadeUp{
     from{
