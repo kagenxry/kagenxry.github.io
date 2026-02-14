@@ -19,21 +19,21 @@ body{
     font-family:'Poppins',sans-serif;
     height:100vh;
     overflow:hidden;
-    background:#140021; /* بنفسجي غامق */
+    background:#140021;
     color:#fff;
     position:relative;
 }
 
-/* ===== Falling Leaves ===== */
+/* ===== Falling Sakura Leaves ===== */
 
 .leaf{
     position:absolute;
     top:-50px;
-    width:20px;
-    height:20px;
-    background:linear-gradient(45deg,#b266ff,#ff66cc);
+    width:18px;
+    height:18px;
+    background:linear-gradient(45deg,#c77dff,#ff8bd1);
     border-radius:50% 0 50% 50%;
-    opacity:.7;
+    opacity:.8;
     animation:fall linear infinite;
 }
 
@@ -42,23 +42,22 @@ body{
         transform:translateY(-50px) rotate(0deg);
         opacity:0;
     }
-    10%{opacity:.8;}
+    10%{opacity:.9;}
     100%{
         transform:translateY(110vh) rotate(360deg);
         opacity:0;
     }
 }
 
-/* توزيع الورق */
 .leaf:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
 .leaf:nth-child(2){left:15%;animation-duration:10s;animation-delay:2s;}
-.leaf:nth-child(3){left:25%;animation-duration:7s;animation-delay:4s;}
-.leaf:nth-child(4){left:40%;animation-duration:9s;animation-delay:1s;}
-.leaf:nth-child(5){left:55%;animation-duration:11s;animation-delay:3s;}
-.leaf:nth-child(6){left:70%;animation-duration:8s;animation-delay:5s;}
-.leaf:nth-child(7){left:85%;animation-duration:10s;animation-delay:2s;}
+.leaf:nth-child(3){left:30%;animation-duration:7s;animation-delay:4s;}
+.leaf:nth-child(4){left:45%;animation-duration:9s;animation-delay:1s;}
+.leaf:nth-child(5){left:60%;animation-duration:11s;animation-delay:3s;}
+.leaf:nth-child(6){left:75%;animation-duration:8s;animation-delay:5s;}
+.leaf:nth-child(7){left:90%;animation-duration:10s;animation-delay:2s;}
 
-/* ===== Header ===== */
+/* ===== Header Left ===== */
 
 .header{
     position:absolute;
@@ -73,26 +72,35 @@ body{
 
 .header p{
     font-size:16px;
-    color:#ccc;
+    color:#d1c4e9;
 }
 
-/* ===== Socials ===== */
+/* ===== Social Links ===== */
 
 .socials{
-    margin-top:10px;
+    margin-top:12px;
     display:flex;
-    gap:15px;
+    flex-direction:column;
+    gap:8px;
 }
 
-.socials a{
+.social-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    text-decoration:none;
     color:#fff;
-    font-size:18px;
     transition:.3s;
 }
 
-.socials a:hover{
-    color:#b266ff;
-    transform:scale(1.2);
+.social-link i{
+    font-size:18px;
+}
+
+.social-link:hover{
+    color:#c77dff;
+    transform:translateX(5px);
 }
 
 /* ===== For Designs Button ===== */
@@ -119,7 +127,7 @@ body{
 
 <body>
 
-<!-- Falling Leaves -->
+<!-- Sakura Leaves -->
 <div class="leaf"></div>
 <div class="leaf"></div>
 <div class="leaf"></div>
@@ -134,11 +142,14 @@ body{
     <p>Gaming & Esports Designer</p>
 
     <div class="socials">
-        <a href="https://wa.me/201015885358" target="_blank">
+        <a href="https://wa.me/201015885358" target="_blank" class="social-link">
             <i class="fa-brands fa-whatsapp"></i>
+            <span>+20 101 588 5358</span>
         </a>
-        <a href="https://instagram.com/kagenxry" target="_blank">
+
+        <a href="https://instagram.com/kagenxry" target="_blank" class="social-link">
             <i class="fa-brands fa-instagram"></i>
+            <span>@kagenxry</span>
         </a>
     </div>
 </div>
