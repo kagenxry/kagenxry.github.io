@@ -6,7 +6,6 @@
 <title>Kagen Xry</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{
@@ -58,8 +57,6 @@ body{
     color:#c77dff;
 }
 
-/* ===== Stats ===== */
-
 .stats{
     display:flex;
     gap:40px;
@@ -75,8 +72,6 @@ body{
     font-size:13px;
     color:#aaa;
 }
-
-/* ===== Buttons ===== */
 
 .buttons{
     margin-top:35px;
@@ -116,47 +111,107 @@ body{
 
 .right{
     width:40%;
-    position:relative;
     display:flex;
     justify-content:center;
-    animation:characterEnter 1.2s ease forwards;
+    align-items:center;
+    animation:enter 1.2s ease forwards;
 }
 
-/* Glow خلف الشخصية */
-.right::before{
+.character{
+    position:relative;
+    width:200px;
+    height:350px;
+    animation:float 3s ease-in-out infinite;
+}
+
+/* Head */
+.head{
+    width:80px;
+    height:80px;
+    background:#f1c27d;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+    left:60px;
+}
+
+/* Hair */
+.hair{
+    width:100px;
+    height:60px;
+    background:#1a001f;
+    border-radius:50px 50px 0 0;
+    position:absolute;
+    top:-10px;
+    left:50px;
+    animation:hairMove 3s ease-in-out infinite;
+}
+
+/* Body */
+.body{
+    width:100px;
+    height:150px;
+    background:#2b004d;
+    position:absolute;
+    top:80px;
+    left:50px;
+    border-radius:20px;
+}
+
+/* Sword */
+.sword{
+    width:8px;
+    height:180px;
+    background:linear-gradient(to bottom,#ccc,#888);
+    position:absolute;
+    left:150px;
+    top:60px;
+    transform:rotate(20deg);
+    box-shadow:0 0 20px #b266ff;
+}
+
+/* Sword Handle */
+.sword::before{
     content:"";
     position:absolute;
-    width:300px;
-    height:300px;
+    width:25px;
+    height:12px;
+    background:#6a00ff;
+    top:-10px;
+    left:-8px;
+    border-radius:5px;
+}
+
+/* Glow */
+.character::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
     background:radial-gradient(circle,#b266ff55,transparent 70%);
-    border-radius:50%;
+    top:50px;
+    left:-25px;
     z-index:-1;
     filter:blur(60px);
 }
 
-.character{
-    width:100%;
-    max-width:380px;
-    animation:float 3.5s ease-in-out infinite;
-}
-
-/* ===== Animations ===== */
-
-@keyframes characterEnter{
-    from{
-        transform:translateY(120px);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
-}
+/* Animations */
 
 @keyframes float{
     0%{transform:translateY(0);}
     50%{transform:translateY(-15px);}
     100%{transform:translateY(0);}
+}
+
+@keyframes hairMove{
+    0%{transform:rotate(0deg);}
+    50%{transform:rotate(5deg);}
+    100%{transform:rotate(0deg);}
+}
+
+@keyframes enter{
+    from{transform:translateY(120px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
 }
 </style>
 </head>
@@ -195,8 +250,12 @@ body{
     </div>
 
     <div class="right">
-        <!-- حط هنا صورة الشخصية PNG بخلفية شفافة -->
-        <img src="character.png" class="character" alt="Character">
+        <div class="character">
+            <div class="hair"></div>
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="sword"></div>
+        </div>
     </div>
 
 </div>
