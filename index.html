@@ -19,9 +19,18 @@ body{
     font-family:'Poppins',sans-serif;
     height:100vh;
     overflow:hidden;
-    background:#140021;
     color:#fff;
     position:relative;
+    background:linear-gradient(-45deg, #140021, #2a0047, #3d0066, #1a0033);
+    background-size:400% 400%;
+    animation:gradientBG 6s ease infinite;
+}
+
+/* خلفية متحركة */
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 /* ===== Falling Leaves ===== */
@@ -76,7 +85,7 @@ body{
     color:#c77dff;
 }
 
-/* Social Links */
+/* Social */
 
 .social{
     margin-top:18px;
@@ -131,7 +140,7 @@ body{
 
 .stat p{
     font-size:11px;
-    color:#aaa;
+    color:#ddd;
 }
 
 .buttons{
@@ -261,6 +270,7 @@ body{
 
 <!-- Character -->
 <div class="center-character">
+    <!-- حط هنا اسم صورة شخصيتك -->
     <img src="your-character.png" alt="">
 </div>
 
