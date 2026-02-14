@@ -18,73 +18,90 @@ body{
     font-family:'Poppins',sans-serif;
     height:100vh;
     overflow:hidden;
-    background:radial-gradient(circle at 30% 30%, #2a0040, #140021 60%);
+    background:#140021;
     color:#fff;
+    position:relative;
+}
+
+/* ===== Falling Leaves ===== */
+
+.leaf{
+    position:absolute;
+    top:-50px;
+    width:18px;
+    height:18px;
+    background:linear-gradient(45deg,#c77dff,#ff8bd1);
+    border-radius:50% 0 50% 50%;
+    opacity:.8;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:0;
+    }
+    10%{opacity:.9;}
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.leaf:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
+.leaf:nth-child(2){left:15%;animation-duration:10s;animation-delay:2s;}
+.leaf:nth-child(3){left:30%;animation-duration:7s;animation-delay:4s;}
+.leaf:nth-child(4){left:45%;animation-duration:9s;animation-delay:1s;}
+.leaf:nth-child(5){left:60%;animation-duration:11s;animation-delay:3s;}
+.leaf:nth-child(6){left:75%;animation-duration:8s;animation-delay:5s;}
+.leaf:nth-child(7){left:90%;animation-duration:10s;animation-delay:2s;}
+
+/* ===== Top Right Area ===== */
+
+.top-right{
+    position:absolute;
+    top:30px;
+    right:40px;
     display:flex;
     align-items:center;
-    justify-content:center;
+    gap:40px;
 }
 
-/* ===== Layout ===== */
-
-.container{
-    width:90%;
-    max-width:1300px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-/* ===== Left Side ===== */
-
-.left{
-    width:55%;
-}
-
-.left h1{
-    font-size:55px;
-}
-
-.left h2{
-    margin-top:10px;
-    font-weight:400;
-    color:#d1c4e9;
-}
-
-.hook{
-    margin-top:20px;
-    font-size:18px;
-    color:#c77dff;
-}
+/* Stats */
 
 .stats{
     display:flex;
-    gap:40px;
-    margin-top:30px;
+    gap:25px;
+}
+
+.stat{
+    text-align:center;
 }
 
 .stat h3{
-    font-size:28px;
-    color:#b266ff;
+    font-size:20px;
+    color:#c77dff;
 }
 
 .stat p{
-    font-size:13px;
+    font-size:11px;
     color:#aaa;
 }
 
+/* Buttons */
+
 .buttons{
-    margin-top:35px;
     display:flex;
-    gap:20px;
+    gap:15px;
 }
 
 .btn{
-    padding:12px 28px;
+    padding:10px 22px;
     border-radius:25px;
     text-decoration:none;
     font-weight:600;
     transition:.3s;
+    font-size:14px;
 }
 
 .primary{
@@ -107,157 +124,77 @@ body{
     transform:translateY(-3px);
 }
 
-/* ===== Character ===== */
+/* ===== Center Content ===== */
 
-.right{
-    width:40%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    animation:enter 1.2s ease forwards;
-}
-
-.character{
-    position:relative;
-    width:200px;
-    height:350px;
-    animation:float 3s ease-in-out infinite;
-}
-
-/* Head */
-.head{
-    width:80px;
-    height:80px;
-    background:#f1c27d;
-    border-radius:50%;
+.center{
     position:absolute;
-    top:0;
-    left:60px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
 }
 
-/* Hair */
-.hair{
-    width:100px;
-    height:60px;
-    background:#1a001f;
-    border-radius:50px 50px 0 0;
-    position:absolute;
-    top:-10px;
-    left:50px;
-    animation:hairMove 3s ease-in-out infinite;
+.center h1{
+    font-size:60px;
 }
 
-/* Body */
-.body{
-    width:100px;
-    height:150px;
-    background:#2b004d;
-    position:absolute;
-    top:80px;
-    left:50px;
-    border-radius:20px;
+.center h2{
+    margin-top:10px;
+    font-weight:400;
+    color:#d1c4e9;
 }
 
-/* Sword */
-.sword{
-    width:8px;
-    height:180px;
-    background:linear-gradient(to bottom,#ccc,#888);
-    position:absolute;
-    left:150px;
-    top:60px;
-    transform:rotate(20deg);
-    box-shadow:0 0 20px #b266ff;
-}
-
-/* Sword Handle */
-.sword::before{
-    content:"";
-    position:absolute;
-    width:25px;
-    height:12px;
-    background:#6a00ff;
-    top:-10px;
-    left:-8px;
-    border-radius:5px;
-}
-
-/* Glow */
-.character::after{
-    content:"";
-    position:absolute;
-    width:250px;
-    height:250px;
-    background:radial-gradient(circle,#b266ff55,transparent 70%);
-    top:50px;
-    left:-25px;
-    z-index:-1;
-    filter:blur(60px);
-}
-
-/* Animations */
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
-    100%{transform:translateY(0);}
-}
-
-@keyframes hairMove{
-    0%{transform:rotate(0deg);}
-    50%{transform:rotate(5deg);}
-    100%{transform:rotate(0deg);}
-}
-
-@keyframes enter{
-    from{transform:translateY(120px);opacity:0;}
-    to{transform:translateY(0);opacity:1;}
+.hook{
+    margin-top:20px;
+    font-size:18px;
+    color:#c77dff;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- Sakura Leaves -->
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
 
-    <div class="left">
-        <h1>Kagen Xry</h1>
-        <h2>Gaming & Esports Designer</h2>
+<!-- Top Right -->
+<div class="top-right">
 
-        <div class="hook">
-            Turning Ideas Into Competitive Visual Power
+    <div class="stats">
+        <div class="stat">
+            <h3>150+</h3>
+            <p>Projects Completed</p>
         </div>
-
-        <div class="stats">
-            <div class="stat">
-                <h3>150+</h3>
-                <p>Projects Completed</p>
-            </div>
-            <div class="stat">
-                <h3>4+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Client Satisfaction</p>
-            </div>
+        <div class="stat">
+            <h3>4+</h3>
+            <p>Years</p>
         </div>
-
-        <div class="buttons">
-            <a href="designs.html" class="btn primary">For Designs</a>
-            <a href="#" class="btn secondary">Rate Me</a>
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Client</p>
         </div>
     </div>
 
-    <div class="right">
-        <div class="character">
-            <div class="hair"></div>
-            <div class="head"></div>
-            <div class="body"></div>
-            <div class="sword"></div>
-        </div>
+    <div class="buttons">
+        <a href="designs.html" class="btn primary">For Designs</a>
+        <a href="#" class="btn secondary">Rate Me</a>
     </div>
 
+</div>
+
+<!-- Center Name -->
+<div class="center">
+    <h1>Kagen Xry</h1>
+    <h2>Gaming & Esports Designer</h2>
+    <div class="hook">
+        Turning Ideas Into Competitive Visual Power
+    </div>
 </div>
 
 </body>
