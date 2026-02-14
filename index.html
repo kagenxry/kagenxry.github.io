@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagen Xry | Gaming Designer</title>
+<title>Kagen Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
@@ -19,148 +20,121 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#050505;
-    font-family:'Orbitron',sans-serif;
+    background:#000;
     overflow:hidden;
 }
 
-/* Animated Neon Background */
+/* Animated Glow */
 body::before{
-    content:"";
-    position:absolute;
-    width:1200px;
-    height:1200px;
-    background:radial-gradient(circle, rgba(255,115,0,0.7), transparent 60%);
-    top:-200px;
-    right:-200px;
-    filter:blur(150px);
-    animation:move1 8s infinite alternate ease-in-out;
-}
-
-body::after{
     content:"";
     position:absolute;
     width:900px;
     height:900px;
-    background:radial-gradient(circle, rgba(140,0,255,0.6), transparent 60%);
-    bottom:-200px;
-    left:-200px;
-    filter:blur(150px);
-    animation:move2 10s infinite alternate ease-in-out;
+    background:radial-gradient(circle, rgba(255,140,0,0.6), transparent 60%);
+    top:10%;
+    right:5%;
+    animation:moveGlow 8s infinite alternate ease-in-out;
+    filter:blur(120px);
 }
 
-@keyframes move1{
+@keyframes moveGlow{
     0%{transform:translate(0,0);}
-    100%{transform:translate(-150px,100px);}
-}
-
-@keyframes move2{
-    0%{transform:translate(0,0);}
-    100%{transform:translate(120px,-120px);}
+    100%{transform:translate(-120px,100px);}
 }
 
 /* Card */
 .card{
     position:relative;
     width:95%;
-    max-width:1500px;
-    padding:80px;
-    background:rgba(15,15,15,0.6);
-    backdrop-filter:blur(25px);
+    max-width:1400px;
+    padding:70px;
+    background:rgba(20,20,20,0.6);
+    backdrop-filter:blur(20px);
     border-radius:30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     color:#fff;
-    transform-style:preserve-3d;
-    transition:0.2s;
+    animation:fadeIn 1.5s ease forwards;
+    opacity:0;
 }
 
-/* Neon Border */
-.card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:30px;
-    padding:2px;
-    background:linear-gradient(45deg,#ff7300,#8c00ff);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
+@keyframes fadeIn{
+    to{opacity:1;}
 }
 
 /* Left */
 .left{
-    max-width:650px;
+    max-width:600px;
 }
 
 .status{
-    color:#00ff99;
+    color:#00ff88;
     margin-bottom:15px;
 }
 
 .role{
-    color:#ff7300;
+    color:#ffb300;
     margin-bottom:10px;
-    letter-spacing:2px;
 }
 
 .name{
-    font-size:80px;
+    font-size:75px;
     font-weight:800;
     margin-bottom:25px;
-    background:linear-gradient(90deg,#ff7300,#8c00ff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    text-shadow:0 0 25px rgba(255,115,0,0.8);
 }
 
 .contact{
     display:flex;
     flex-direction:column;
     gap:12px;
-    font-size:18px;
+    color:#ccc;
 }
 
 .contact span{
-    color:#ff7300;
+    color:#ffb300;
 }
 
-/* Character */
+/* Right Character Area */
 .right{
-    width:500px;
-    height:600px;
-    perspective:1000px;
+    width:450px;
+    height:550px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .right img{
     width:100%;
-    height:100%;
+    max-height:100%;
     object-fit:contain;
-    filter:drop-shadow(0 0 50px rgba(255,115,0,0.8));
-    transition:transform 0.2s ease;
+    filter:drop-shadow(0 0 40px rgba(255,140,0,0.6));
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+    100%{transform:translateY(0);}
 }
 
 /* Button */
 .design-btn{
     position:absolute;
     top:40px;
-    right:80px;
-    padding:12px 35px;
-    background:linear-gradient(45deg,#ff7300,#8c00ff);
+    right:70px;
+    padding:10px 28px;
+    background:#ffb300;
     border:none;
-    border-radius:40px;
-    color:#fff;
+    border-radius:30px;
     font-weight:600;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .design-btn:hover{
-    transform:scale(1.15);
-    box-shadow:0 0 25px rgba(255,115,0,0.8);
+    background:#ffa000;
+    transform:scale(1.1);
 }
 
 /* Responsive */
@@ -171,13 +145,13 @@ body::after{
         gap:40px;
     }
 
-    .name{
-        font-size:50px;
-    }
-
     .right{
         width:300px;
         height:auto;
+    }
+
+    .name{
+        font-size:50px;
     }
 }
 </style>
@@ -185,7 +159,7 @@ body::after{
 
 <body>
 
-<div class="card" id="card">
+<div class="card">
 
 <button class="design-btn">For Designs</button>
 
@@ -202,23 +176,11 @@ body::after{
 </div>
 
 <div class="right">
-    <img src="character.png" id="character">
+    <!-- حط هنا صورة الشخصية -->
+    <img src="character.png" alt="Character">
 </div>
 
 </div>
-
-<script>
-const card = document.getElementById("card");
-const character = document.getElementById("character");
-
-document.addEventListener("mousemove", (e) => {
-    let x = (window.innerWidth / 2 - e.pageX) / 25;
-    let y = (window.innerHeight / 2 - e.pageY) / 25;
-
-    card.style.transform = rotateY(${x}deg) rotateX(${y}deg);
-    character.style.transform = rotateY(${x*2}deg) rotateX(${y*2}deg);
-});
-</script>
 
 </body>
 </html>
