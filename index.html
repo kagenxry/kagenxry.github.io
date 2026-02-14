@@ -19,143 +19,187 @@ body{
     font-family:'Poppins',sans-serif;
     height:100vh;
     overflow:hidden;
-    background:#140021;
+    background:radial-gradient(circle at 30% 30%, #2a0040, #140021 60%);
     color:#fff;
-    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-/* ===== Falling Sakura Leaves ===== */
+/* ===== Layout ===== */
 
-.leaf{
-    position:absolute;
-    top:-50px;
-    width:18px;
-    height:18px;
-    background:linear-gradient(45deg,#c77dff,#ff8bd1);
-    border-radius:50% 0 50% 50%;
-    opacity:.8;
-    animation:fall linear infinite;
+.container{
+    width:90%;
+    max-width:1300px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-@keyframes fall{
-    0%{
-        transform:translateY(-50px) rotate(0deg);
-        opacity:0;
-    }
-    10%{opacity:.9;}
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-    }
+/* ===== Left Side ===== */
+
+.left{
+    width:55%;
 }
 
-.leaf:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
-.leaf:nth-child(2){left:15%;animation-duration:10s;animation-delay:2s;}
-.leaf:nth-child(3){left:30%;animation-duration:7s;animation-delay:4s;}
-.leaf:nth-child(4){left:45%;animation-duration:9s;animation-delay:1s;}
-.leaf:nth-child(5){left:60%;animation-duration:11s;animation-delay:3s;}
-.leaf:nth-child(6){left:75%;animation-duration:8s;animation-delay:5s;}
-.leaf:nth-child(7){left:90%;animation-duration:10s;animation-delay:2s;}
-
-/* ===== Header Left ===== */
-
-.header{
-    position:absolute;
-    top:30px;
-    left:40px;
+.left h1{
+    font-size:55px;
 }
 
-.header h1{
-    font-size:38px;
-    margin-bottom:5px;
-}
-
-.header p{
-    font-size:16px;
+.left h2{
+    margin-top:10px;
+    font-weight:400;
     color:#d1c4e9;
 }
 
-/* ===== Social Links ===== */
-
-.socials{
-    margin-top:12px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
-
-.social-link{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-size:14px;
-    text-decoration:none;
-    color:#fff;
-    transition:.3s;
-}
-
-.social-link i{
+.hook{
+    margin-top:20px;
     font-size:18px;
-}
-
-.social-link:hover{
     color:#c77dff;
-    transform:translateX(5px);
 }
 
-/* ===== For Designs Button ===== */
+/* ===== Stats ===== */
 
-.design-btn{
-    position:absolute;
-    top:30px;
-    right:40px;
-    padding:10px 25px;
-    background:#6a00ff;
+.stats{
+    display:flex;
+    gap:40px;
+    margin-top:30px;
+}
+
+.stat h3{
+    font-size:28px;
+    color:#b266ff;
+}
+
+.stat p{
+    font-size:13px;
+    color:#aaa;
+}
+
+/* ===== Buttons ===== */
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    padding:12px 28px;
     border-radius:25px;
     text-decoration:none;
-    color:#fff;
     font-weight:600;
     transition:.3s;
 }
 
-.design-btn:hover{
+.primary{
+    background:#6a00ff;
+    color:#fff;
+}
+
+.primary:hover{
     background:#b266ff;
     transform:translateY(-3px);
+}
+
+.secondary{
+    border:2px solid #6a00ff;
+    color:#fff;
+}
+
+.secondary:hover{
+    background:#6a00ff;
+    transform:translateY(-3px);
+}
+
+/* ===== Character ===== */
+
+.right{
+    width:40%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    animation:characterEnter 1.2s ease forwards;
+}
+
+/* Glow خلف الشخصية */
+.right::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:radial-gradient(circle,#b266ff55,transparent 70%);
+    border-radius:50%;
+    z-index:-1;
+    filter:blur(60px);
+}
+
+.character{
+    width:100%;
+    max-width:380px;
+    animation:float 3.5s ease-in-out infinite;
+}
+
+/* ===== Animations ===== */
+
+@keyframes characterEnter{
+    from{
+        transform:translateY(120px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Sakura Leaves -->
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
-<div class="leaf"></div>
+<div class="container">
 
-<!-- Header -->
-<div class="header">
-    <h1>Kagen Xry</h1>
-    <p>Gaming & Esports Designer</p>
+    <div class="left">
+        <h1>Kagen Xry</h1>
+        <h2>Gaming & Esports Designer</h2>
 
-    <div class="socials">
-        <a href="https://wa.me/201015885358" target="_blank" class="social-link">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>+20 101 588 5358</span>
-        </a>
+        <div class="hook">
+            Turning Ideas Into Competitive Visual Power
+        </div>
 
-        <a href="https://instagram.com/kagenxry" target="_blank" class="social-link">
-            <i class="fa-brands fa-instagram"></i>
-            <span>@kagenxry</span>
-        </a>
+        <div class="stats">
+            <div class="stat">
+                <h3>150+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat">
+                <h3>4+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="designs.html" class="btn primary">For Designs</a>
+            <a href="#" class="btn secondary">Rate Me</a>
+        </div>
     </div>
-</div>
 
-<!-- Button -->
-<a href="designs.html" class="design-btn">For Designs</a>
+    <div class="right">
+        <!-- حط هنا صورة الشخصية PNG بخلفية شفافة -->
+        <img src="character.png" class="character" alt="Character">
+    </div>
+
+</div>
 
 </body>
 </html>
