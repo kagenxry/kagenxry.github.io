@@ -23,6 +23,7 @@ background:linear-gradient(-45deg,#140021,#2a0047,#3d0066,#1a0033);
 background-size:400% 400%;
 animation:gradientBG 6s ease infinite;
 position:relative;
+overflow:hidden;
 }
 
 @keyframes gradientBG{
@@ -31,7 +32,7 @@ position:relative;
 100%{background-position:0% 50%;}
 }
 
-/* Leaves */
+/* أوراق الشجر */
 .leaf{
 position:absolute;
 top:-50px;
@@ -64,10 +65,13 @@ justify-content:space-between;
 align-items:flex-start;
 padding:40px;
 flex-wrap:wrap;
+position:relative;
+z-index:2;
 }
 
+/* Left */
 .left{
-max-width:500px;
+max-width:450px;
 }
 
 .left h1{
@@ -108,6 +112,7 @@ color:#c77dff;
 transform:translateX(5px);
 }
 
+/* Right */
 .right{
 display:flex;
 flex-direction:column;
@@ -157,20 +162,45 @@ transform:translateY(-3px);
 background:#b266ff;
 }
 
-/* ========================= */
-/* 📱 Responsive */
-/* ========================= */
+/* ===== الشخصية في النص ===== */
 
+.center-character{
+position:absolute;
+bottom:-400px;
+left:50%;
+transform:translateX(-50%);
+width:380px;
+z-index:1;
+animation:enter 1.8s ease-out forwards;
+}
+
+.center-character img{
+width:100%;
+height:auto;
+animation:float 4s ease-in-out infinite 1.8s;
+filter:drop-shadow(0 0 35px #8a2be2);
+}
+
+/* دخول الشخصية */
+@keyframes enter{
+0%{bottom:-400px;opacity:0;}
+100%{bottom:0;opacity:1;}
+}
+
+/* حركة خفيفة مستمرة */
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+
+/* Responsive */
 @media (max-width:768px){
 
 .container{
 flex-direction:column;
 align-items:center;
 text-align:center;
-}
-
-.left h1{
-font-size:28px;
 }
 
 .right{
@@ -185,6 +215,11 @@ justify-content:center;
 .buttons{
 flex-wrap:wrap;
 justify-content:center;
+}
+
+.center-character{
+width:250px;
+bottom:-250px;
 }
 }
 </style>
@@ -219,18 +254,15 @@ justify-content:center;
 </div>
 
 <div class="right">
-
 <div class="stats">
 <div class="stat">
 <h3>150+</h3>
 <p>Projects</p>
 </div>
-
 <div class="stat">
 <h3>4+</h3>
 <p>Years</p>
 </div>
-
 <div class="stat">
 <h3>100%</h3>
 <p>Clients</p>
@@ -241,9 +273,13 @@ justify-content:center;
 <a href="designs.html" class="btn primary">For Designs</a>
 <a href="#" class="btn secondary">Rate Me</a>
 </div>
+</div>
 
 </div>
 
+<!-- الشخصية -->
+<div class="center-character">
+<img src="character.png.jpeg" alt="Character">
 </div>
 
 </body>
