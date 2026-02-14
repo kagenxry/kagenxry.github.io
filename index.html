@@ -19,216 +19,132 @@ body{
     font-family:'Poppins',sans-serif;
     height:100vh;
     overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
+    background:#140021; /* بنفسجي غامق */
     color:#fff;
-
-    /* ===== GRADIENT واضح فعلاً ===== */
-    background: linear-gradient(
-        -45deg,
-        #000000,
-        #1a0f00,
-        #2a1a00,
-        #001a1a,
-        #000814,
-        #000000
-    );
-    background-size:500% 500%;
-    animation: gradientMove 15s ease infinite;
+    position:relative;
 }
 
-/* ===== GLOW EFFECT ===== */
+/* ===== Falling Leaves ===== */
 
-body::before{
-    content:"";
+.leaf{
     position:absolute;
-    width:700px;
-    height:700px;
-    background: radial-gradient(circle, rgba(255,179,0,0.25), transparent 70%);
-    top:-200px;
-    left:-200px;
-    filter:blur(120px);
-    animation: glowMove 6s ease-in-out infinite alternate;
-    z-index:-1;
+    top:-50px;
+    width:20px;
+    height:20px;
+    background:linear-gradient(45deg,#b266ff,#ff66cc);
+    border-radius:50% 0 50% 50%;
+    opacity:.7;
+    animation:fall linear infinite;
 }
 
-body::after{
-    content:"";
+@keyframes fall{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:0;
+    }
+    10%{opacity:.8;}
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* توزيع الورق */
+.leaf:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
+.leaf:nth-child(2){left:15%;animation-duration:10s;animation-delay:2s;}
+.leaf:nth-child(3){left:25%;animation-duration:7s;animation-delay:4s;}
+.leaf:nth-child(4){left:40%;animation-duration:9s;animation-delay:1s;}
+.leaf:nth-child(5){left:55%;animation-duration:11s;animation-delay:3s;}
+.leaf:nth-child(6){left:70%;animation-duration:8s;animation-delay:5s;}
+.leaf:nth-child(7){left:85%;animation-duration:10s;animation-delay:2s;}
+
+/* ===== Header ===== */
+
+.header{
     position:absolute;
-    width:600px;
-    height:600px;
-    background: radial-gradient(circle, rgba(0,150,255,0.2), transparent 70%);
-    bottom:-200px;
-    right:-200px;
-    filter:blur(120px);
-    z-index:-1;
+    top:30px;
+    left:40px;
 }
 
-/* ===== LAYOUT ===== */
+.header h1{
+    font-size:38px;
+    margin-bottom:5px;
+}
 
-.wrapper{
-    width:90%;
-    max-width:1300px;
+.header p{
+    font-size:16px;
+    color:#ccc;
+}
+
+/* ===== Socials ===== */
+
+.socials{
+    margin-top:10px;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    animation:fadeUp 1s ease forwards;
-    opacity:0;
+    gap:15px;
 }
 
-/* ===== TEXT AREA ===== */
-
-.content{
-    width:55%;
+.socials a{
+    color:#fff;
+    font-size:18px;
+    transition:.3s;
 }
 
-h1{
-    font-size:65px;
-    color:#ffffff;
-    text-shadow:0 0 25px rgba(255,255,255,0.25);
+.socials a:hover{
+    color:#b266ff;
+    transform:scale(1.2);
 }
 
-h2{
-    margin-top:15px;
-    font-weight:400;
-    color:#cccccc;
-}
-
-/* ===== BUTTON ===== */
+/* ===== For Designs Button ===== */
 
 .design-btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 30px;
-    background:#ffb300;
-    color:#000;
-    font-weight:600;
-    border-radius:30px;
+    position:absolute;
+    top:30px;
+    right:40px;
+    padding:10px 25px;
+    background:#6a00ff;
+    border-radius:25px;
     text-decoration:none;
+    color:#fff;
+    font-weight:600;
     transition:.3s;
 }
 
 .design-btn:hover{
-    background:#fff;
+    background:#b266ff;
     transform:translateY(-3px);
-}
-
-/* ===== SOCIALS ===== */
-
-.socials{
-    margin-top:40px;
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
-}
-
-.social{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    text-decoration:none;
-    color:#ffffff;
-    font-size:15px;
-    transition:.3s;
-}
-
-.social i{
-    font-size:20px;
-}
-
-.social:hover{
-    color:#ffb300;
-    transform:translateY(-3px);
-}
-
-/* ===== CHARACTER ===== */
-
-.character{
-    width:40%;
-    display:flex;
-    justify-content:center;
-    animation:characterEnter 1.2s ease forwards;
-}
-
-.character img{
-    width:100%;
-    max-width:420px;
-    animation:float 3.5s ease-in-out infinite;
-}
-
-/* ===== ANIMATIONS ===== */
-
-@keyframes gradientMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-@keyframes glowMove{
-    from{transform:translateY(0px);}
-    to{transform:translateY(50px);}
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes characterEnter{
-    from{
-        transform:translateY(120px);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
-}
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-18px);}
-    100%{transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<!-- Falling Leaves -->
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
+<div class="leaf"></div>
 
-    <div class="content">
-        <h1>Kagen Xry</h1>
-        <h2>Gaming & Esports Designer</h2>
+<!-- Header -->
+<div class="header">
+    <h1>Kagen Xry</h1>
+    <p>Gaming & Esports Designer</p>
 
-        <a href="designs.html" class="design-btn">For Designs</a>
-
-        <div class="socials">
-            <a href="https://wa.me/201015885358" target="_blank" class="social">
-                <i class="fa-brands fa-whatsapp"></i>
-                +201015885358
-            </a>
-
-            <a href="https://instagram.com/kagenxry" target="_blank" class="social">
-                <i class="fa-brands fa-instagram"></i>
-                @kagenxry
-            </a>
-        </div>
+    <div class="socials">
+        <a href="https://wa.me/201015885358" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/kagenxry" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
     </div>
-
-    <div class="character">
-        <img src="character.png" alt="Character">
-    </div>
-
 </div>
+
+<!-- Button -->
+<a href="designs.html" class="design-btn">For Designs</a>
 
 </body>
 </html>
