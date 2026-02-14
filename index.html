@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagen Xry</title>
+<title>KAGENXRY</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{
@@ -17,151 +16,110 @@ box-sizing:border-box;
 
 body{
 font-family:'Poppins',sans-serif;
-min-height:100vh;
+height:100vh;
+background:linear-gradient(135deg,#050816,#0d132d,#111827);
 color:#fff;
-background:linear-gradient(135deg,#0f0f0f,#1a1a1a,#2a2a2a);
-background-size:400% 400%;
-animation:moveBG 8s ease infinite;
-display:flex;
-flex-direction:column;
+position:relative;
+overflow:hidden;
 }
 
-/* حركة خفيفة للخلفية */
-@keyframes moveBG{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* Noise Effect */
-body::after{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:url("https://grainy-gradients.vercel.app/noise.svg");
-opacity:0.05;
-pointer-events:none;
-z-index:0;
-}
-
-/* ====== Top Section ====== */
+/* ===== Top Right Section ===== */
 
 .top{
+position:absolute;
+top:30px;
+right:60px;
 display:flex;
-justify-content:flex-end;
 align-items:center;
-padding:30px 50px;
 gap:40px;
-position:relative;
-z-index:2;
 }
 
-/* Stats */
 .stats{
 display:flex;
-gap:25px;
+gap:30px;
 }
 
 .stat{
 text-align:center;
-font-size:14px;
 }
 
 .stat h3{
-font-size:18px;
+color:#6aa8ff;
 }
 
-/* Buttons */
+.stat p{
+font-size:13px;
+color:#cfd8ff;
+}
+
+/* ===== Buttons ===== */
+
 .buttons{
 display:flex;
 gap:15px;
 }
 
 .btn{
-padding:8px 20px;
-border-radius:25px;
-text-decoration:none;
+padding:10px 22px;
+border-radius:30px;
 font-weight:600;
-font-size:13px;
-transition:.3s;
+text-decoration:none;
 }
 
 .primary{
-background:#ffffff;
-color:#000;
-}
-
-.secondary{
-border:1px solid #ffffff;
+background:#3a6bff;
 color:#fff;
 }
 
-.btn:hover{
-opacity:.7;
-transform:translateY(-2px);
+.secondary{
+border:1px solid #5f2eff;
+color:#fff;
 }
 
-/* ====== Glass Card Center ====== */
+/* ===== Glass Box Top Left ===== */
 
-.center{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-z-index:2;
-}
-
-.glass{
-backdrop-filter:blur(20px);
+.box{
+position:absolute;
+top:120px;
+left:60px;
 background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,0.1);
 padding:60px 80px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 0 40px rgba(0,0,0,0.6);
+border-radius:20px;
 }
 
-.glass h1{
-font-size:42px;
-letter-spacing:4px;
+.box h1{
+font-size:40px;
+letter-spacing:3px;
 }
 
-.glass p{
-margin-top:15px;
-font-size:15px;
-color:#cccccc;
+.box p{
+margin-top:10px;
+color:#cfd8ff;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
+
 @media (max-width:768px){
 
 .top{
+right:20px;
+top:20px;
 flex-direction:column;
-align-items:center;
 gap:20px;
 }
 
-.stats{
-flex-wrap:wrap;
-justify-content:center;
+.box{
+left:20px;
+top:150px;
+padding:40px;
 }
 
-.buttons{
-flex-wrap:wrap;
-justify-content:center;
+.box h1{
+font-size:26px;
 }
 
-.glass{
-padding:40px 30px;
-}
-
-.glass h1{
-font-size:28px;
-}
 }
 </style>
 </head>
@@ -194,12 +152,10 @@ font-size:28px;
 
 </div>
 
-<div class="center">
-<div class="glass">
+<div class="box">
 <h1>KAGENXRY</h1>
 <p>Gaming & Esports Designer</p>
 <p>Turning Ideas Into Competitive Visual Power</p>
-</div>
 </div>
 
 </body>
