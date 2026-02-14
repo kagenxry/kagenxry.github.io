@@ -16,7 +16,9 @@
 }
 
 body{
-    background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #141414, #000000);
+    background: radial-gradient(circle at 20% 30%, rgba(255,179,0,0.08), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,179,0,0.06), transparent 40%),
+                linear-gradient(-45deg, #0f0f0f, #1a1a1a, #141414, #000000);
     background-size: 400% 400%;
     animation: gradientMove 12s ease infinite;
     color:#fff;
@@ -32,7 +34,7 @@ body{
 
 .wrapper{
     width:90%;
-    max-width:1300px;
+    max-width:1400px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -41,16 +43,19 @@ body{
 /* ===== GLASS CARD ===== */
 
 .container{
-    width:45%;
-    padding:50px;
-    border-radius:25px;
+    width:55%;
+    min-height:400px;
+    padding:60px;
+    border-radius:30px;
+    position:relative;
 
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border:1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 40px rgba(255,179,0,0.15),
+                0 8px 40px rgba(0,0,0,0.6);
 
     animation:fadeUp 1s ease forwards;
     opacity:0;
@@ -62,17 +67,18 @@ h1{
 }
 
 h2{
-    margin-top:10px;
+    margin-top:15px;
     font-weight:400;
     color:#ccc;
 }
 
-/* ===== BUTTON ===== */
+/* ===== BUTTON TOP RIGHT ===== */
 
 .design-btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 35px;
+    position:absolute;
+    top:40px;
+    right:50px;
+    padding:12px 28px;
     background:#ffb300;
     color:#000;
     font-weight:600;
@@ -83,13 +89,13 @@ h2{
 
 .design-btn:hover{
     background:#fff;
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 }
 
 /* ===== SOCIALS ===== */
 
 .socials{
-    margin-top:35px;
+    margin-top:40px;
     display:flex;
     gap:25px;
     flex-wrap:wrap;
@@ -126,8 +132,8 @@ h2{
 
 .character img{
     width:100%;
-    max-width:400px;
-    animation:float 3s ease-in-out infinite;
+    max-width:420px;
+    animation:float 3.5s ease-in-out infinite;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -151,7 +157,7 @@ h2{
 
 @keyframes characterEnter{
     from{
-        transform:translateY(100px);
+        transform:translateY(120px);
         opacity:0;
     }
     to{
@@ -162,7 +168,7 @@ h2{
 
 @keyframes float{
     0%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
+    50%{transform:translateY(-18px);}
     100%{transform:translateY(0);}
 }
 </style>
@@ -174,10 +180,11 @@ h2{
 
     <!-- GLASS CARD -->
     <div class="container">
-        <h1>Kagen Xry</h1>
-        <h2>Gaming & Esports Designer</h2>
 
         <a href="designs.html" class="design-btn">For Designs</a>
+
+        <h1>Kagen Xry</h1>
+        <h2>Gaming & Esports Designer</h2>
 
         <div class="socials">
             <a href="https://wa.me/201015885358" target="_blank" class="social">
@@ -190,11 +197,11 @@ h2{
                 @kagenxry
             </a>
         </div>
+
     </div>
 
     <!-- CHARACTER -->
     <div class="character">
-        <!-- حط هنا صورة الشخصية بتاعتك -->
         <img src="character.png" alt="Esports Character">
     </div>
 
