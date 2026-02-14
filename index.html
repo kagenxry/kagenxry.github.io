@@ -1,4 +1,51 @@
-<!DOCTYPE html>
+[11:59 am, 14/02/2026] mahmoud talha: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Dark UI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:#fff;
+padding:60px 8%;
+}
+
+/* ===== Section Title ===== */
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:40px;
+font-weight:700;
+background:linear-gradient(90deg,#7ea7ff,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.section-title p{
+margin-top:10px;
+color:#9ca3af;
+}
+
+/* ===== Grid Layout ===== */
+
+.grid{
+disp…
+[12:06 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -45,16 +92,65 @@ max-width:900px;
 
 /* Name */
 
+.…
+[12:12 pm, 14/02/2026] mahmoud talha: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kagenxry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#060b1f;
+color:#fff;
+min-height:100vh;
+padding:60px;
+}
+
+/* ===== Strong Blue Background Glow ===== */
+
+body::before{
+content:"";
+position:fixed;
+width:1000px;
+height:1000px;
+background:radial-gradient(circle,#2563eb 0%,transparent 70%);
+top:-300px;
+left:-300px;
+filter:blur(150px);
+z-index:-1;
+opacity:.8;
+}
+
+/* ===== Top Left Section ===== */
+
+.top-left{
+max-width:900px;
+}
+
+/* Name */
+
 .top-left h1{
 font-size:42px;
-color:#1e3a8a; /* dark blue */
+color:#3b82f6; /* light blue */
 font-weight:700;
 }
 
 .top-left p{
-margin-top:8px;
+margin-top:10px;
 color:#9ca3af;
 font-size:15px;
+max-width:500px;
 }
 
 /* Buttons + Stats Row */
@@ -85,8 +181,6 @@ border:1px solid #3b82f6;
 color:#fff;
 }
 
-/* Stats */
-
 .stats{
 display:flex;
 gap:20px;
@@ -98,10 +192,11 @@ font-weight:600;
 color:#3b82f6;
 }
 
-/* ===== Pricing Section ===== */
+/* ===== Pricing Section (CENTERED) ===== */
 
 .pricing{
-margin-top:100px;
+margin-top:120px;
+text-align:center;
 }
 
 .pricing h2{
@@ -117,24 +212,44 @@ margin-top:5px;
 
 .cards{
 display:flex;
+justify-content:center;
 gap:30px;
-margin-top:40px;
+margin-top:50px;
 flex-wrap:wrap;
 }
 
 .card{
 width:260px;
-height:200px;
+min-height:300px;
 background:rgba(255,255,255,0.05);
 border-radius:20px;
 border:1px solid rgba(255,255,255,0.1);
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:30px;
+padding:25px;
+backdrop-filter:blur(20px);
+text-align:left;
+}
+
+.card h3{
+color:#3b82f6;
+margin-bottom:15px;
+}
+
+.card ul{
+list-style:none;
+margin-bottom:20px;
+}
+
+.card ul li{
+margin-bottom:8px;
+color:#d1d5db;
+font-size:14px;
+}
+
+.price{
+font-size:24px;
 font-weight:700;
 color:#3b82f6;
-backdrop-filter:blur(20px);
+margin-top:15px;
 }
 </style>
 </head>
@@ -144,8 +259,7 @@ backdrop-filter:blur(20px);
 <div class="top-left">
 
 <h1>Kagenxry</h1>
-<p>Gaming & Esports Designer</p>
-<p>Training.....</p>
+<p>A talented designer who transforms designs into competitive visual content</p>
 
 <div class="row">
 <a href="designs.html" class="btn primary">For Designs</a>
@@ -167,9 +281,22 @@ backdrop-filter:blur(20px);
 <p>Right Now</p>
 
 <div class="cards">
-<div class="card">$15</div>
-<div class="card">$35</div>
-<div class="card">$75</div>
+
+<div class="card">
+<h3>Package 1</h3>
+<ul>
+<li>Logo</li>
+<li>Banner</li>
+<li>7 Stickers</li>
+<li>Highlights</li>
+<li>Available and Unavailable</li>
+</ul>
+<div class="price">10$</div>
+</div>
+
+<div class="card"></div>
+<div class="card"></div>
+
 </div>
 
 </div>
