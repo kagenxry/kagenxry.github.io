@@ -53,7 +53,7 @@ opacity:.8;
 z-index:-2;
 }
 
-/* ===== Top Left Section ===== */
+/* ===== Top Section ===== */
 
 .top-left h1{
 font-size:42px;
@@ -104,23 +104,32 @@ font-weight:600;
 color:#60a5fa;
 }
 
-/* ===== Contact Section ===== */
+/* ===== Contact ===== */
 
 .contact{
 margin-top:20px;
 display:flex;
 gap:20px;
-align-items:center;
 flex-wrap:wrap;
+}
+
+.contact a{
 color:#94a3b8;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.contact a:hover{
+color:#60a5fa;
 }
 
 .contact i{
 color:#3b82f6;
-margin-right:6px;
 }
 
-/* ===== Pricing Section Centered ===== */
+/* ===== Pricing Section ===== */
 
 .pricing{
 margin-top:120px;
@@ -215,8 +224,13 @@ margin-top:10px;
 </div>
 
 <div class="contact">
-<div><i class="fa-brands fa-whatsapp"></i> +201015885358</div>
-<div><i class="fa-brands fa-instagram"></i> kagenxry</div>
+<a href="https://wa.me/201015885358" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> +201015885358
+</a>
+
+<a href="https://instagram.com/kagenxry" target="_blank">
+<i class="fa-brands fa-instagram"></i> kagenxry
+</a>
 </div>
 
 </div>
@@ -241,8 +255,19 @@ margin-top:10px;
 <div class="price">10$</div>
 </div>
 
-<div class="card"></div>
-<div class="card"></div>
+<div class="card">
+<h3>Package 2</h3>
+<ul>
+<li>Logo</li>
+<li>Banner</li>
+<li>Stickers</li>
+</ul>
+<div class="price">3$</div>
+</div>
+
+<div class="card">
+<h3>Package 3</h3>
+</div>
 
 </div>
 
