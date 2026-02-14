@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema UI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* Hero Background */
+.hero{
+    height:100vh;
+    background:linear-gradient(90deg,#0f0f0f 30%, rgba(15,15,15,0.6)),
+               radial-gradient(circle at right, #1f2937, #0f0f0f 60%);
+    background-blend-mode:overlay;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+}
+
+nav .logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#ccc;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#fff;
+}
+
+nav .right{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.sign-btn{
+    padding:8px 18px;
+    border:1px solid #fff;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sign-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* Content */
+.content{
+    flex:1;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.text{
+    max-width:500px;
+}
+
+.text h1{
+    font-size:60px;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.text p{
+    margin:20px 0;
+    color:#bbb;
+    line-height:1.6;
+}
+
+.watch-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:#00e0ff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.watch-btn:hover{
+    transform:translateX(5px);
+}
+
+/* Bottom Slider Style */
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 8%;
+    align-items:center;
+    color:#aaa;
+    font-size:14px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.circle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.circle:hover{
+    background:#444;
+}
+
+@media(max-width:900px){
+    .text h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <nav>
+        <div class="logo">MYFLIX</div>
+
+        <ul>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Kids</a></li>
+        </ul>
+
+        <div class="right">
+            <span>Search</span>
+            <button class="sign-btn">Sign In</button>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="text">
+            <h1>Epic Fantasy Show</h1>
+            <p>
+                Winter is here, and so is the great battle.
+                Stream the latest episodes now in stunning quality.
+            </p>
+            <a href="#" class="watch-btn">▶ Watch Trailer</a>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div>Previous Show</div>
+        <div style="display:flex; gap:15px;">
+            <div class="circle">◀</div>
+            <div class="circle">▶</div>
+        </div>
+        <div>Next Show</div>
+    </div>
+
+</section>
+
+</body>
+</html>
