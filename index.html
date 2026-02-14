@@ -21,20 +21,28 @@ body{
     animation: gradientMove 12s ease infinite;
     color:#fff;
     font-family:'Poppins',sans-serif;
+    height:100vh;
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    overflow:hidden;
 }
 
-/* ===== GLASS CONTAINER ===== */
+/* ===== LAYOUT ===== */
+
+.wrapper{
+    width:90%;
+    max-width:1300px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ===== GLASS CARD ===== */
 
 .container{
-    text-align:left;
-    width:80%;
-    max-width:1000px;
-    padding:60px;
+    width:45%;
+    padding:50px;
     border-radius:25px;
 
     background: rgba(255,255,255,0.05);
@@ -106,6 +114,22 @@ h2{
     transform:translateY(-3px);
 }
 
+/* ===== CHARACTER ===== */
+
+.character{
+    width:40%;
+    display:flex;
+    justify-content:center;
+    animation:characterEnter 1.2s ease forwards;
+    opacity:0;
+}
+
+.character img{
+    width:100%;
+    max-width:400px;
+    animation:float 3s ease-in-out infinite;
+}
+
 /* ===== ANIMATIONS ===== */
 
 @keyframes fadeUp{
@@ -124,30 +148,54 @@ h2{
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
+
+@keyframes characterEnter{
+    from{
+        transform:translateY(100px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-    <h1>Kagen Xry</h1>
-    <h2>Gaming & Esports Designer</h2>
+    <!-- GLASS CARD -->
+    <div class="container">
+        <h1>Kagen Xry</h1>
+        <h2>Gaming & Esports Designer</h2>
 
-    <a href="designs.html" class="design-btn">For Designs</a>
+        <a href="designs.html" class="design-btn">For Designs</a>
 
-    <div class="socials">
+        <div class="socials">
+            <a href="https://wa.me/201015885358" target="_blank" class="social">
+                <i class="fa-brands fa-whatsapp"></i>
+                +201015885358
+            </a>
 
-        <a href="https://wa.me/201015885358" target="_blank" class="social">
-            <i class="fa-brands fa-whatsapp"></i>
-            +201015885358
-        </a>
+            <a href="https://instagram.com/kagenxry" target="_blank" class="social">
+                <i class="fa-brands fa-instagram"></i>
+                @kagenxry
+            </a>
+        </div>
+    </div>
 
-        <a href="https://instagram.com/kagenxry" target="_blank" class="social">
-            <i class="fa-brands fa-instagram"></i>
-            @kagenxry
-        </a>
-
+    <!-- CHARACTER -->
+    <div class="character">
+        <!-- حط هنا صورة الشخصية بتاعتك -->
+        <img src="character.png" alt="Esports Character">
     </div>
 
 </div>
